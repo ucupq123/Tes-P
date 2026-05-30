@@ -1,0 +1,682 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Markeplase — Fashion Marketplace</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  </head>
+  <body>
+
+    <!-- ========== PRELOADER ========== -->
+    <div class="preloader" id="preloader">
+      <div class="preloader-inner">
+        <div class="preloader-logo">Markeplase</div>
+        <div class="preloader-bar"><div class="preloader-bar-fill"></div></div>
+        
+      </div>
+    </div>
+
+    <!-- ========== SCROLL PROGRESS ========== -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- ========== TOP BAR ========== -->
+    <div class="topbar" id="topbar">
+      <div class="topbar-scroll">
+        <span><iconify-icon icon="solar:fire-bold-duotone"></iconify-icon> FLASH SALE — Diskon hingga 70% hari ini!</span>
+        <span><iconify-icon icon="solar:delivery-bold-duotone"></iconify-icon> GRATIS ONGKIR — Min. belanja Rp99K</span>
+        <span><iconify-icon icon="solar:star-bold-duotone"></iconify-icon> KOLEKSI BARU — Update setiap minggu</span>
+        <span><iconify-icon icon="solar:card-bold-duotone"></iconify-icon> COD TERSEDIA — Bayar di tempat</span>
+        <span><iconify-icon icon="solar:fire-bold-duotone"></iconify-icon> FLASH SALE — Diskon hingga 70% hari ini!</span>
+        <span><iconify-icon icon="solar:delivery-bold-duotone"></iconify-icon> GRATIS ONGKIR — Min. belanja Rp99K</span>
+      </div>
+      <button class="topbar-close" id="topbarClose"><iconify-icon icon="solar:close-circle-bold-duotone"></iconify-icon></button>
+    </div>
+
+    <!-- ========== NAVBAR ========== -->
+    <nav class="navbar">
+      <div class="logo"><iconify-icon icon="solar:bag-heart-bold-duotone"></iconify-icon> Markeplase</div>
+      <div class="search-bar">
+        <span class="search-icon"><iconify-icon icon="solar:magnifer-bold-duotone"></iconify-icon></span>
+        <input type="text" placeholder="Cari produk, kategori, brand..." class="search-input" id="searchInput">
+        <div class="search-suggestions" id="searchSuggest">
+          <span class="suggest-title"><iconify-icon icon="solar:fire-bold-duotone"></iconify-icon> Trending</span>
+          <a href="#">Kaos Oversize</a>
+          <a href="#">Hoodie Premium</a>
+          <a href="#">Tas Ransel</a>
+          <a href="#">Bucket Hat</a>
+          <a href="#">Celana Cargo</a>
+        </div>
+      </div>
+      <div class="nav-actions">
+        <div class="nav-notif-wrap">
+          <button class="nav-icon-btn" title="Notifikasi" id="notifBtn"><iconify-icon icon="solar:bell-bold-duotone"></iconify-icon><span class="nav-badge">5</span></button>
+          <div class="notif-dropdown" id="notifDropdown">
+            <div class="notif-header"><strong>Notifikasi</strong><button class="notif-read">Tandai dibaca</button></div>
+            <div class="notif-list">
+              <div class="notif-item unread"><span class="notif-dot"></span><div><p>Pesanan <strong>#MRK-2847</strong> sudah dikirim</p><small>2 menit lalu</small></div></div>
+              <div class="notif-item unread"><span class="notif-dot"></span><div><p>Flash Sale dimulai! Diskon <strong>70%</strong></p><small>15 menit lalu</small></div></div>
+              <div class="notif-item"><div><p>Kaos Oversize restock! Stok tersedia</p><small>1 jam lalu</small></div></div>
+              <div class="notif-item"><div><p>Promo kode <strong>HEMAT20</strong> aktif!</p><small>3 jam lalu</small></div></div>
+              <div class="notif-item"><div><p>Rating kamu untuk Hoodie Premium telah dipublikasikan</p><small>1 hari lalu</small></div></div>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="nav-icon-btn" title="Wishlist"><iconify-icon icon="solar:heart-bold"></iconify-icon><span class="nav-badge">3</span></a>
+        <button class="nav-icon-btn" title="Keranjang" id="cartBtn"><iconify-icon icon="solar:cart-large-2-bold-duotone"></iconify-icon><span class="nav-badge" id="cartCount">2</span></button>
+        <div class="nav-profile-wrap">
+          <button class="nav-icon-btn" title="Akun" id="profileBtn"><iconify-icon icon="solar:user-bold-duotone"></iconify-icon></button>
+          <div class="profile-dropdown" id="profileDropdown">
+            <div class="profile-info"><div class="profile-avatar">A</div><div><strong>Admin</strong><span>admin@markeplase.id</span></div></div>
+            <div class="profile-links">
+              <a href="#"><iconify-icon icon="solar:user-bold-duotone"></iconify-icon> Akun Saya</a>
+              <a href="#"><iconify-icon icon="solar:box-bold-duotone"></iconify-icon> Pesanan</a>
+              <a href="#"><iconify-icon icon="solar:heart-bold"></iconify-icon> Wishlist</a>
+              <a href="#"><iconify-icon icon="solar:settings-bold-duotone"></iconify-icon> Pengaturan</a>
+              <a href="#" class="logout"><iconify-icon icon="solar:logout-2-bold-duotone"></iconify-icon> Keluar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+      <ul class="nav-menu" id="menu">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#kategori">Kategori</a></li>
+        <li><a href="#produk">Produk</a></li>
+        <li><a href="#testimoni">Testimoni</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ul>
+    </nav>
+
+    <!-- ========== CART DRAWER ========== -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-drawer" id="cartDrawer">
+      <div class="cart-drawer-header">
+        <h3><iconify-icon icon="solar:cart-large-2-bold-duotone"></iconify-icon> Keranjang Belanja</h3>
+        <button class="cart-drawer-close" id="cartClose"><iconify-icon icon="solar:close-circle-bold-duotone"></iconify-icon></button>
+      </div>
+      <div class="cart-drawer-body">
+        <div class="cart-item">
+          <img src="https://picsum.photos/seed/kaos-oversize/80/80.jpg" alt="Product">
+          <div class="cart-item-info">
+            <h4>Kaos Oversize Premium</h4>
+            <span class="cart-item-variant">Size: L · Warna: Hitam</span>
+            <div class="cart-item-bottom">
+              <span class="cart-item-price">Rp 99.000</span>
+              <div class="cart-qty"><button class="qty-btn">−</button><span>1</span><button class="qty-btn">+</button></div>
+            </div>
+          </div>
+          <button class="cart-item-remove"><iconify-icon icon="solar:trash-bin-trash-bold-duotone"></iconify-icon></button>
+        </div>
+        <div class="cart-item">
+          <img src="https://picsum.photos/seed/hoodie-premium/80/80.jpg" alt="Product">
+          <div class="cart-item-info">
+            <h4>Hoodie Premium Fleece</h4>
+            <span class="cart-item-variant">Size: XL · Warna: Navy</span>
+            <div class="cart-item-bottom">
+              <span class="cart-item-price">Rp 120.000</span>
+              <div class="cart-qty"><button class="qty-btn">−</button><span>1</span><button class="qty-btn">+</button></div>
+            </div>
+          </div>
+          <button class="cart-item-remove"><iconify-icon icon="solar:trash-bin-trash-bold-duotone"></iconify-icon></button>
+        </div>
+        <div class="cart-promo">
+          <input type="text" placeholder="Kode promo" class="cart-promo-input">
+          <button class="cart-promo-btn">Pakai</button>
+        </div>
+      </div>
+      <div class="cart-drawer-footer">
+        <div class="cart-total"><span>Total</span><strong>Rp 219.000</strong></div>
+        <button class="cart-checkout-btn"><iconify-icon icon="solar:bag-check-bold-duotone"></iconify-icon> Checkout Sekarang</button>
+        <a href="#" class="cart-view-all">Lihat Keranjang</a>
+      </div>
+    </div>
+
+    <!-- ========== HERO SLIDER ========== -->
+    <section class="hero-section">
+      <div class="hero-grid-bg"></div>
+      <div class="hero-slider" id="heroSlider">
+        <div class="hero-slide active">
+          <div class="hero-content">
+            <p class="hero-tag"><iconify-icon icon="solar:fire-bold-duotone"></iconify-icon> Gratis Ongkir Seluruh Indonesia</p>
+            <h1 class="hero-title">Gaya Terbaikmu <br>Mulai dari <span>Markeplase</span></h1>
+            <p class="hero-desc">Koleksi fashion pria & wanita terlengkap — desain modern, bahan premium, harga bersahabat.</p>
+            <div class="hero-btns">
+              <a href="#produk" class="hero-cta primary"><iconify-icon icon="solar:cart-large-2-bold-duotone"></iconify-icon> Belanja Sekarang</a>
+              <a href="#kategori" class="hero-cta outline"><iconify-icon icon="solar:widget-bold-duotone"></iconify-icon> Lihat Kategori</a>
+            </div>
+            <div class="hero-stats">
+              <div class="hero-stat"><strong>10K+</strong><span>Produk</span></div>
+              <div class="hero-stat"><strong>50K+</strong><span>Pelanggan</span></div>
+              <div class="hero-stat"><strong>4.9 <iconify-icon icon="solar:star-bold" style="font-size:14px;color:#f59e0b"></iconify-icon></strong><span>Rating</span></div>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="hero-image-stack">
+              <img src="https://picsum.photos/seed/fashion-hero1/500/600.jpg" alt="Fashion" class="hero-img-1">
+              <img src="https://picsum.photos/seed/fashion-hero2/400/500.jpg" alt="Fashion" class="hero-img-2">
+              <div class="hero-float-card fc-1"><span class="fc-icon"><iconify-icon icon="solar:box-bold-duotone"></iconify-icon></span><div><span class="fc-label">Pesanan Baru</span><span class="fc-value">+128 hari ini</span></div></div>
+              <div class="hero-float-card fc-2"><span class="fc-icon"><iconify-icon icon="solar:star-bold-duotone"></iconify-icon></span><div><span class="fc-label">Rating</span><span class="fc-value">4.9 / 5.0</span></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-slide">
+          <div class="hero-content">
+            <p class="hero-tag"><iconify-icon icon="solar:bolt-bold-duotone"></iconify-icon> Flash Sale Hari Ini</p>
+            <h1 class="hero-title">Diskon <span>70%</span><br>Koleksi Terbaik</h1>
+            <p class="hero-desc">Jangan sampai kehabisan! Promo terbatas hanya hari ini untuk semua kategori fashion.</p>
+            <div class="hero-btns">
+              <a href="#flash" class="hero-cta primary"><iconify-icon icon="solar:bolt-bold-duotone"></iconify-icon> Lihat Flash Sale</a>
+              <a href="#produk" class="hero-cta outline"><iconify-icon icon="solar:widget-bold-duotone"></iconify-icon> Semua Produk</a>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="hero-image-stack">
+              <img src="https://picsum.photos/seed/sale-hero1/500/600.jpg" alt="Sale" class="hero-img-1">
+              <img src="https://picsum.photos/seed/sale-hero2/400/500.jpg" alt="Sale" class="hero-img-2">
+            </div>
+          </div>
+        </div>
+        <div class="hero-slide">
+          <div class="hero-content">
+            <p class="hero-tag"><iconify-icon icon="solar:star-bold-duotone"></iconify-icon> New Arrival</p>
+            <h1 class="hero-title">Koleksi <span>Terbaru</span><br>Sudah Tersedia</h1>
+            <p class="hero-desc">Update gaya kamu dengan koleksi terbaru minggu ini. Desain fresh, bahan premium!</p>
+            <div class="hero-btns">
+              <a href="#produk" class="hero-cta primary"><iconify-icon icon="solar:bag-heart-bold-duotone"></iconify-icon> Cek Sekarang</a>
+              <a href="#collections" class="hero-cta outline"><iconify-icon icon="solar:gallery-bold-duotone"></iconify-icon> Lihat Koleksi</a>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="hero-image-stack">
+              <img src="https://picsum.photos/seed/new-hero1/500/600.jpg" alt="New" class="hero-img-1">
+              <img src="https://picsum.photos/seed/new-hero2/400/500.jpg" alt="New" class="hero-img-2">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-slider-dots" id="heroDots">
+        <span class="hero-dot active" data-slide="0"></span>
+        <span class="hero-dot" data-slide="1"></span>
+        <span class="hero-dot" data-slide="2"></span>
+      </div>
+    </section>
+
+    <!-- ========== TRUST BADGES ========== -->
+    <section class="trust-section">
+      <div class="trust-grid">
+        <div class="trust-item"><span class="trust-icon"><iconify-icon icon="solar:shield-check-bold-duotone"></iconify-icon></span><div><strong>Garansi 100%</strong><span>Uang kembali jika tidak sesuai</span></div></div>
+        <div class="trust-item"><span class="trust-icon"><iconify-icon icon="solar:verified-check-bold-duotone"></iconify-icon></span><div><strong>Produk Orisinil</strong><span>Dijamin original & berkualitas</span></div></div>
+        <div class="trust-item"><span class="trust-icon"><iconify-icon icon="solar:delivery-bold-duotone"></iconify-icon></span><div><strong>Pengiriman Cepat</strong><span>Same day & next day tersedia</span></div></div>
+        <div class="trust-item"><span class="trust-icon"><iconify-icon icon="solar:lock-bold-duotone"></iconify-icon></span><div><strong>Pembayaran Aman</strong><span>Enkripsi & sistem terproteksi</span></div></div>
+      </div>
+    </section>
+
+    <!-- ========== PROMO BANNER ========== -->
+    <section class="promo-banner">
+      <div class="promo-scroll">
+        <div class="promo-item promo-flash"><iconify-icon icon="solar:bolt-bold-duotone"></iconify-icon> FLASH SALE — Diskon hingga 70%</div>
+        <div class="promo-item promo-free"><iconify-icon icon="solar:delivery-bold-duotone"></iconify-icon> GRATIS ONGKIR — Min. belanja Rp99K</div>
+        <div class="promo-item promo-new"><iconify-icon icon="solar:star-bold-duotone"></iconify-icon> KOLEKSI BARU — Update setiap minggu</div>
+        <div class="promo-item promo-cod"><iconify-icon icon="solar:card-bold-duotone"></iconify-icon> COD TERSEDIA — Bayar di tempat</div>
+        <div class="promo-item promo-flash"><iconify-icon icon="solar:bolt-bold-duotone"></iconify-icon> FLASH SALE — Diskon hingga 70%</div>
+        <div class="promo-item promo-free"><iconify-icon icon="solar:delivery-bold-duotone"></iconify-icon> GRATIS ONGKIR — Min. belanja Rp99K</div>
+        <div class="promo-item promo-new"><iconify-icon icon="solar:star-bold-duotone"></iconify-icon> KOLEKSI BARU — Update setiap minggu</div>
+        <div class="promo-item promo-cod"><iconify-icon icon="solar:card-bold-duotone"></iconify-icon> COD TERSEDIA — Bayar di tempat</div>
+      </div>
+    </section>
+
+    <!-- ========== BRAND MARQUEE ========== -->
+    <section class="brand-section">
+      <div class="section-header"><span class="section-tag"><iconify-icon icon="solar:shop-bold-duotone"></iconify-icon> Official Store</span><h2 class="section-title">Brand Terpercaya</h2></div>
+      <div class="brand-marquee">
+        <div class="brand-track">
+          <span class="brand-logo"><iconify-icon icon="simple-icons:nike"></iconify-icon> NIKE</span>
+          <span class="brand-logo"><iconify-icon icon="simple-icons:adidas"></iconify-icon> ADIDAS</span>
+          <span class="brand-logo"><iconify-icon icon="simple-icons:uniqlo"></iconify-icon> UNIQLO</span>
+          <span class="brand-logo"><iconify-icon icon="simple-icons:vans"></iconify-icon> VANS</span>
+          <span class="brand-logo"><iconify-icon icon="simple-icons:converse"></iconify-icon> CONVERSE</span>
+          <span class="brand-logo"><iconify-icon icon="simple-icons:zara"></iconify-icon> ZARA</span>
+          <span class="brand-logo"><iconify-icon icon="simple-icons:hm"></iconify-icon> H&M</span>
+          <span class="brand-logo"><iconify-icon icon="simple-icons:puma"></iconify-icon> PUMA</span>
+          <span class="brand-logo"><iconify-icon icon="simple-icons:newbalance"></iconify-icon> NEW BALANCE</span>
+          <span class="brand-logo"><iconify-icon icon="simple-icons:fossil"></iconify-icon> FOSSIL</span>
+          <span class="brand-logo"><iconify-icon icon="simple-icons:nike"></iconify-icon> NIKE</span>
+          <span class="brand-logo"><iconify-icon icon="simple-icons:adidas"></iconify-icon> ADIDAS</span>
+          <span class="brand-logo"><iconify-icon icon="simple-icons:uniqlo"></iconify-icon> UNIQLO</span>
+          <span class="brand-logo"><iconify-icon icon="simple-icons:vans"></iconify-icon> VANS</span>
+          <span class="brand-logo"><iconify-icon icon="simple-icons:converse"></iconify-icon> CONVERSE</span>
+          <span class="brand-logo"><iconify-icon icon="simple-icons:zara"></iconify-icon> ZARA</span>
+          <span class="brand-logo"><iconify-icon icon="simple-icons:hm"></iconify-icon> H&M</span>
+          <span class="brand-logo"><iconify-icon icon="simple-icons:puma"></iconify-icon> PUMA</span>
+          <span class="brand-logo"><iconify-icon icon="simple-icons:newbalance"></iconify-icon> NEW BALANCE</span>
+          <span class="brand-logo"><iconify-icon icon="simple-icons:fossil"></iconify-icon> FOSSIL</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== KATEGORI ========== -->
+    <section class="category-section" id="kategori">
+      <div class="section-header"><span class="section-tag"><iconify-icon icon="solar:tag-bold-duotone"></iconify-icon> Kategori</span><h2 class="section-title">Pilih Kategori Favoritmu</h2><p class="section-desc">Temukan produk sesuai gaya dan kebutuhanmu</p></div>
+      <div class="category-grid">
+        <a href="#" class="category-card"><div class="category-icon"><iconify-icon icon="solar:t-shirt-bold-duotone"></iconify-icon></div><span class="category-name">Kaos</span><span class="category-count">2.4K</span></a>
+        <a href="#" class="category-card"><div class="category-icon"><iconify-icon icon="solar:windbreaker-bold-duotone"></iconify-icon></div><span class="category-name">Hoodie</span><span class="category-count">1.8K</span></a>
+        <a href="#" class="category-card"><div class="category-icon"><iconify-icon icon="solar:handbag-bold-duotone"></iconify-icon></div><span class="category-name">Tas</span><span class="category-count">960</span></a>
+        <a href="#" class="category-card"><div class="category-icon"><iconify-icon icon="solar:hanger-2-bold-duotone"></iconify-icon></div><span class="category-name">Celana</span><span class="category-count">1.2K</span></a>
+        <a href="#" class="category-card"><div class="category-icon"><iconify-icon icon="solar:cap-bold-duotone"></iconify-icon></div><span class="category-name">Topi</span><span class="category-count">540</span></a>
+        <a href="#" class="category-card"><div class="category-icon"><iconify-icon icon="solar:running-round-bold-duotone"></iconify-icon></div><span class="category-name">Sepatu</span><span class="category-count">780</span></a>
+        <a href="#" class="category-card"><div class="category-icon"><iconify-icon icon="solar:diamond-bold-duotone"></iconify-icon></div><span class="category-name">Aksesoris</span><span class="category-count">1.5K</span></a>
+        <a href="#" class="category-card"><div class="category-icon"><iconify-icon icon="solar:crown-bold-duotone"></iconify-icon></div><span class="category-name">Dress</span><span class="category-count">670</span></a>
+      </div>
+    </section>
+
+    <!-- ========== CARA BELANJA ========== -->
+    <section class="howto-section">
+      <div class="section-header"><span class="section-tag"><iconify-icon icon="solar:document-text-bold-duotone"></iconify-icon> Panduan</span><h2 class="section-title">Cara Belanja di Markeplase</h2><p class="section-desc">Mudah, cepat, dan aman — cuma 3 langkah</p></div>
+      <div class="howto-grid">
+        <div class="howto-step"><div class="howto-number">1</div><div class="howto-icon"><iconify-icon icon="solar:magnifer-bold-duotone"></iconify-icon></div><h3>Pilih Produk</h3><p>Cari dan pilih produk favoritmu dari ribuan koleksi terbaik</p></div>
+        <div class="howto-connector"></div>
+        <div class="howto-step"><div class="howto-number">2</div><div class="howto-icon"><iconify-icon icon="solar:card-bold-duotone"></iconify-icon></div><h3>Bayar Aman</h3><p>Bayar dengan metode favoritmu — COD, transfer, e-wallet, atau QRIS</p></div>
+        <div class="howto-connector"></div>
+        <div class="howto-step"><div class="howto-number">3</div><div class="howto-icon"><iconify-icon icon="solar:box-bold-duotone"></iconify-icon></div><h3>Terima Barang</h3><p>Pesanan dikirim cepat ke alamatmu dengan garansi 100% aman</p></div>
+      </div>
+    </section>
+
+    <!-- ========== KOLEKSI PILIHAN ========== -->
+    <section class="collection-section" id="collections">
+      <div class="section-header"><span class="section-tag"><iconify-icon icon="solar:gallery-bold-duotone"></iconify-icon> Koleksi</span><h2 class="section-title">Koleksi Pilihan</h2><p class="section-desc">Style curated tim kami untukmu</p></div>
+      <div class="collection-grid">
+        <a href="#" class="collection-card coll-large"><img src="https://picsum.photos/seed/streetwear-col/800/500.jpg" alt="Streetwear"><div class="collection-overlay"><span class="collection-tag"><iconify-icon icon="solar:fire-bold-duotone"></iconify-icon> Trending</span><h3>Streetwear Vibes</h3><span class="collection-link">Lihat Koleksi <iconify-icon icon="solar:arrow-right-bold"></iconify-icon></span></div></a>
+        <a href="#" class="collection-card"><img src="https://picsum.photos/seed/formal-col/500/500.jpg" alt="Formal"><div class="collection-overlay"><span class="collection-tag"><iconify-icon icon="solar:tie-bold-duotone"></iconify-icon> Premium</span><h3>Formal Elegance</h3><span class="collection-link">Lihat Koleksi <iconify-icon icon="solar:arrow-right-bold"></iconify-icon></span></div></a>
+        <a href="#" class="collection-card"><img src="https://picsum.photos/seed/sporty-col/500/500.jpg" alt="Sporty"><div class="collection-overlay"><span class="collection-tag"><iconify-icon icon="solar:running-round-bold-duotone"></iconify-icon> Active</span><h3>Sporty Look</h3><span class="collection-link">Lihat Koleksi <iconify-icon icon="solar:arrow-right-bold"></iconify-icon></span></div></a>
+      </div>
+    </section>
+
+    <!-- ========== KENAPA BELANJA ========== -->
+    <section class="feature-section">
+      <div class="section-header"><span class="section-tag"><iconify-icon icon="solar:star-bold-duotone"></iconify-icon> Keunggulan</span><h2 class="section-title">Kenapa Belanja di Markeplase?</h2><p class="section-desc">Alasan ribuan pelanggan mempercayai kami</p></div>
+      <div class="feature-grid">
+        <div class="feature-item"><div class="feature-icon-wrap"><iconify-icon icon="solar:verified-check-bold-duotone"></iconify-icon></div><div class="feature-text"><strong>Produk Berkualitas</strong><small>Material premium, jahitan rapi</small></div></div>
+        <div class="feature-item"><div class="feature-icon-wrap"><iconify-icon icon="solar:wallet-money-bold-duotone"></iconify-icon></div><div class="feature-text"><strong>Harga Terjangkau</strong><small>Tanpa markup berlebihan</small></div></div>
+        <div class="feature-item"><div class="feature-icon-wrap"><iconify-icon icon="solar:rocket-2-bold-duotone"></iconify-icon></div><div class="feature-text"><strong>Pengiriman Cepat</strong><small>Same day & next day tersedia</small></div></div>
+        <div class="feature-item"><div class="feature-icon-wrap"><iconify-icon icon="solar:lock-bold-duotone"></iconify-icon></div><div class="feature-text"><strong>Transaksi Aman</strong><small>Pembayaran terenkripsi 100%</small></div></div>
+        <div class="feature-item"><div class="feature-icon-wrap"><iconify-icon icon="solar:chat-round-dots-bold-duotone"></iconify-icon></div><div class="feature-text"><strong>CS Responsif</strong><small>Respon dalam 5 menit</small></div></div>
+        <div class="feature-item"><div class="feature-icon-wrap"><iconify-icon icon="solar:refresh-bold-duotone"></iconify-icon></div><div class="feature-text"><strong>Garansi Retur</strong><small>30 hari pengembalian gratis</small></div></div>
+      </div>
+    </section>
+
+    <!-- ========== PRODUK TERLARIS ========== -->
+    <section class="product-section" id="produk">
+      <div class="section-header"><span class="section-tag"><iconify-icon icon="solar:fire-bold-duotone"></iconify-icon> Terlaris</span><h2 class="section-title">Produk Terlaris</h2><p class="section-desc">Pilihan favorit pelanggan dengan rating tertinggi</p></div>
+      <div class="product-filters">
+        <button class="filter-btn active" data-filter="all">Semua</button>
+        <button class="filter-btn" data-filter="kaos">Kaos</button>
+        <button class="filter-btn" data-filter="hoodie">Hoodie</button>
+        <button class="filter-btn" data-filter="tas">Tas</button>
+        <button class="filter-btn" data-filter="aksesoris">Aksesoris</button>
+      </div>
+      <div class="product-grid-wrapper">
+        <a href="produk.html" class="produk-card" data-cat="kaos" data-name="Kaos Oversize Premium" data-price="Rp 99.000" data-img="https://picsum.photos/seed/kaos-oversize/400/400.jpg" data-rating="4.9" data-sold="2.4K" onclick="openQuickView(event,this)">
+          <span class="badge badge-terlaris"><iconify-icon icon="solar:fire-bold-duotone"></iconify-icon> Terlaris</span>
+          <div class="card-img-wrap"><img src="https://picsum.photos/seed/kaos-oversize/400/400.jpg" alt="Kaos Oversize"><div class="img-overlay"></div><button class="wishlist-btn"><iconify-icon icon="solar:heart-bold"></iconify-icon></button><div class="quick-view-tag"><iconify-icon icon="solar:eye-bold-duotone"></iconify-icon> Quick View</div><div class="card-colors"><span class="color-dot active" style="background:#1a1a2e"></span><span class="color-dot" style="background:#e8e8e8"></span><span class="color-dot" style="background:#4a6fa5"></span><span class="color-dot" style="background:#7c3aed"></span></div></div>
+          <div class="card-info"><h3>Kaos Oversize Premium</h3><div class="card-rating"><iconify-icon icon="solar:star-bold" style="color:#f59e0b"></iconify-icon> 4.9 <span>(2.4K)</span></div><div class="card-price"><span class="price-current">Rp 99.000</span><span class="price-original">Rp 149.000</span></div><div class="card-tag"><iconify-icon icon="solar:fire-bold-duotone"></iconify-icon> 33% OFF</div><div class="card-shipping"><iconify-icon icon="solar:delivery-bold-duotone"></iconify-icon> Gratis Ongkir</div></div>
+        </a>
+        <a href="produk.html" class="produk-card" data-cat="hoodie" data-name="Hoodie Premium Fleece" data-price="Rp 120.000" data-img="https://picsum.photos/seed/hoodie-premium/400/400.jpg" data-rating="4.8" data-sold="1.8K" onclick="openQuickView(event,this)">
+          <span class="badge badge-promo"><iconify-icon icon="solar:tag-bold-duotone"></iconify-icon> Promo</span>
+          <div class="card-img-wrap"><img src="https://picsum.photos/seed/hoodie-premium/400/400.jpg" alt="Hoodie Premium"><div class="img-overlay"></div><button class="wishlist-btn"><iconify-icon icon="solar:heart-bold"></iconify-icon></button><div class="quick-view-tag"><iconify-icon icon="solar:eye-bold-duotone"></iconify-icon> Quick View</div><div class="card-colors"><span class="color-dot active" style="background:#1e3a5f"></span><span class="color-dot" style="background:#2d2d2d"></span><span class="color-dot" style="background:#8b5e3c"></span></div></div>
+          <div class="card-info"><h3>Hoodie Premium Fleece</h3><div class="card-rating"><iconify-icon icon="solar:star-bold" style="color:#f59e0b"></iconify-icon> 4.8 <span>(1.8K)</span></div><div class="card-price"><span class="price-current">Rp 120.000</span><span class="price-original">Rp 200.000</span></div><div class="card-tag"><iconify-icon icon="solar:fire-bold-duotone"></iconify-icon> 40% OFF</div><div class="card-shipping"><iconify-icon icon="solar:delivery-bold-duotone"></iconify-icon> Gratis Ongkir</div></div>
+        </a>
+        <a href="produk.html" class="produk-card" data-cat="hoodie" data-name="Hoodie Classic Unisex" data-price="Rp 100.000" data-img="https://picsum.photos/seed/hoodie-basic/400/400.jpg" data-rating="4.7" data-sold="960" onclick="openQuickView(event,this)">
+          <span class="badge badge-new"><iconify-icon icon="solar:star-bold-duotone"></iconify-icon> New</span>
+          <div class="card-img-wrap"><img src="https://picsum.photos/seed/hoodie-basic/400/400.jpg" alt="Hoodie"><div class="img-overlay"></div><button class="wishlist-btn"><iconify-icon icon="solar:heart-bold"></iconify-icon></button><div class="quick-view-tag"><iconify-icon icon="solar:eye-bold-duotone"></iconify-icon> Quick View</div></div>
+          <div class="card-info"><h3>Hoodie Classic Unisex</h3><div class="card-rating"><iconify-icon icon="solar:star-bold" style="color:#f59e0b"></iconify-icon> 4.7 <span>(960)</span></div><div class="card-price"><span class="price-current">Rp 100.000</span><span class="price-original">Rp 150.000</span></div><div class="card-tag"><iconify-icon icon="solar:fire-bold-duotone"></iconify-icon> 33% OFF</div><div class="card-shipping"><iconify-icon icon="solar:delivery-bold-duotone"></iconify-icon> Ongkir Rp5K</div></div>
+        </a>
+        <a href="produk.html" class="produk-card" data-cat="tas" data-name="Tas Lempang Kulit" data-price="Rp 50.000" data-img="https://picsum.photos/seed/tas-lempang/400/400.jpg" data-rating="4.9" data-sold="3.2K" onclick="openQuickView(event,this)">
+          <span class="badge badge-promo"><iconify-icon icon="solar:tag-bold-duotone"></iconify-icon> Promo</span>
+          <div class="card-img-wrap"><img src="https://picsum.photos/seed/tas-lempang/400/400.jpg" alt="Tas Lempang"><div class="img-overlay"></div><button class="wishlist-btn"><iconify-icon icon="solar:heart-bold"></iconify-icon></button><div class="quick-view-tag"><iconify-icon icon="solar:eye-bold-duotone"></iconify-icon> Quick View</div></div>
+          <div class="card-info"><h3>Tas Lempang Kulit</h3><div class="card-rating"><iconify-icon icon="solar:star-bold" style="color:#f59e0b"></iconify-icon> 4.9 <span>(3.2K)</span></div><div class="card-price"><span class="price-current">Rp 50.000</span><span class="price-original">Rp 89.000</span></div><div class="card-tag"><iconify-icon icon="solar:fire-bold-duotone"></iconify-icon> 44% OFF</div><div class="card-shipping"><iconify-icon icon="solar:delivery-bold-duotone"></iconify-icon> Gratis Ongkir</div></div>
+        </a>
+        <a href="produk.html" class="produk-card" data-cat="tas" data-name="Tas Sekolah Waterproof" data-price="Rp 30.000" data-img="https://picsum.photos/seed/tas-sekolah/400/400.jpg" data-rating="4.6" data-sold="720" onclick="openQuickView(event,this)">
+          <span class="badge badge-new"><iconify-icon icon="solar:star-bold-duotone"></iconify-icon> New</span>
+          <div class="card-img-wrap"><img src="https://picsum.photos/seed/tas-sekolah/400/400.jpg" alt="Tas Sekolah"><div class="img-overlay"></div><button class="wishlist-btn"><iconify-icon icon="solar:heart-bold"></iconify-icon></button><div class="quick-view-tag"><iconify-icon icon="solar:eye-bold-duotone"></iconify-icon> Quick View</div></div>
+          <div class="card-info"><h3>Tas Sekolah Waterproof</h3><div class="card-rating"><iconify-icon icon="solar:star-bold" style="color:#f59e0b"></iconify-icon> 4.6 <span>(720)</span></div><div class="card-price"><span class="price-current">Rp 30.000</span><span class="price-original">Rp 55.000</span></div><div class="card-tag"><iconify-icon icon="solar:fire-bold-duotone"></iconify-icon> 45% OFF</div><div class="card-shipping"><iconify-icon icon="solar:delivery-bold-duotone"></iconify-icon> Ongkir Rp5K</div></div>
+        </a>
+        <a href="produk.html" class="produk-card" data-cat="tas" data-name="Tas Ransel Anti Air" data-price="Rp 50.000" data-img="https://picsum.photos/seed/tas-ransel/400/400.jpg" data-rating="4.8" data-sold="1.5K" onclick="openQuickView(event,this)">
+          <span class="badge badge-terlaris"><iconify-icon icon="solar:fire-bold-duotone"></iconify-icon> Terlaris</span>
+          <div class="card-img-wrap"><img src="https://picsum.photos/seed/tas-ransel/400/400.jpg" alt="Tas Ransel"><div class="img-overlay"></div><button class="wishlist-btn"><iconify-icon icon="solar:heart-bold"></iconify-icon></button><div class="quick-view-tag"><iconify-icon icon="solar:eye-bold-duotone"></iconify-icon> Quick View</div></div>
+          <div class="card-info"><h3>Tas Ransel Anti Air</h3><div class="card-rating"><iconify-icon icon="solar:star-bold" style="color:#f59e0b"></iconify-icon> 4.8 <span>(1.5K)</span></div><div class="card-price"><span class="price-current">Rp 50.000</span><span class="price-original">Rp 95.000</span></div><div class="card-tag"><iconify-icon icon="solar:fire-bold-duotone"></iconify-icon> 47% OFF</div><div class="card-shipping"><iconify-icon icon="solar:delivery-bold-duotone"></iconify-icon> Gratis Ongkir</div></div>
+        </a>
+        <a href="produk.html" class="produk-card" data-cat="kaos" data-name="Kaos Polos Cotton Combed" data-price="Rp 59.000" data-img="https://picsum.photos/seed/kaos-polos/400/400.jpg" data-rating="4.9" data-sold="5.1K" onclick="openQuickView(event,this)">
+          <span class="badge badge-new"><iconify-icon icon="solar:star-bold-duotone"></iconify-icon> New</span>
+          <div class="card-img-wrap"><img src="https://picsum.photos/seed/kaos-polos/400/400.jpg" alt="Kaos Polos"><div class="img-overlay"></div><button class="wishlist-btn"><iconify-icon icon="solar:heart-bold"></iconify-icon></button><div class="quick-view-tag"><iconify-icon icon="solar:eye-bold-duotone"></iconify-icon> Quick View</div></div>
+          <div class="card-info"><h3>Kaos Polos Cotton Combed</h3><div class="card-rating"><iconify-icon icon="solar:star-bold" style="color:#f59e0b"></iconify-icon> 4.9 <span>(5.1K)</span></div><div class="card-price"><span class="price-current">Rp 59.000</span><span class="price-original">Rp 99.000</span></div><div class="card-tag"><iconify-icon icon="solar:fire-bold-duotone"></iconify-icon> 40% OFF</div><div class="card-shipping"><iconify-icon icon="solar:delivery-bold-duotone"></iconify-icon> Gratis Ongkir</div></div>
+        </a>
+        <a href="produk.html" class="produk-card" data-cat="aksesoris" data-name="Topi Bucket Hat" data-price="Rp 35.000" data-img="https://picsum.photos/seed/topi-bucket/400/400.jpg" data-rating="4.7" data-sold="890" onclick="openQuickView(event,this)">
+          <span class="badge badge-promo"><iconify-icon icon="solar:tag-bold-duotone"></iconify-icon> Promo</span>
+          <div class="card-img-wrap"><img src="https://picsum.photos/seed/topi-bucket/400/400.jpg" alt="Topi Bucket"><div class="img-overlay"></div><button class="wishlist-btn"><iconify-icon icon="solar:heart-bold"></iconify-icon></button><div class="quick-view-tag"><iconify-icon icon="solar:eye-bold-duotone"></iconify-icon> Quick View</div></div>
+          <div class="card-info"><h3>Topi Bucket Hat</h3><div class="card-rating"><iconify-icon icon="solar:star-bold" style="color:#f59e0b"></iconify-icon> 4.7 <span>(890)</span></div><div class="card-price"><span class="price-current">Rp 35.000</span><span class="price-original">Rp 65.000</span></div><div class="card-tag"><iconify-icon icon="solar:fire-bold-duotone"></iconify-icon> 46% OFF</div><div class="card-shipping"><iconify-icon icon="solar:delivery-bold-duotone"></iconify-icon> Ongkir Rp5K</div></div>
+        </a>
+        <a href="produk.html" class="produk-card" data-cat="aksesoris" data-name="Kalung Chain Titanium" data-price="Rp 25.000" data-img="https://picsum.photos/seed/kalung-chain/400/400.jpg" data-rating="4.8" data-sold="2.1K" onclick="openQuickView(event,this)">
+          <span class="badge badge-terlaris"><iconify-icon icon="solar:fire-bold-duotone"></iconify-icon> Terlaris</span>
+          <div class="card-img-wrap"><img src="https://picsum.photos/seed/kalung-chain/400/400.jpg" alt="Kalung"><div class="img-overlay"></div><button class="wishlist-btn"><iconify-icon icon="solar:heart-bold"></iconify-icon></button><div class="quick-view-tag"><iconify-icon icon="solar:eye-bold-duotone"></iconify-icon> Quick View</div></div>
+          <div class="card-info"><h3>Kalung Chain Titanium</h3><div class="card-rating"><iconify-icon icon="solar:star-bold" style="color:#f59e0b"></iconify-icon> 4.8 <span>(2.1K)</span></div><div class="card-price"><span class="price-current">Rp 25.000</span><span class="price-original">Rp 50.000</span></div><div class="card-tag"><iconify-icon icon="solar:fire-bold-duotone"></iconify-icon> 50% OFF</div><div class="card-shipping"><iconify-icon icon="solar:delivery-bold-duotone"></iconify-icon> Gratis Ongkir</div></div>
+        </a>
+        <a href="produk.html" class="produk-card" data-cat="kaos" data-name="Kaos Graphic Limited" data-price="Rp 129.000" data-img="https://picsum.photos/seed/kaos-graphic/400/400.jpg" data-rating="4.9" data-sold="1.3K" onclick="openQuickView(event,this)">
+          <span class="badge badge-new"><iconify-icon icon="solar:star-bold-duotone"></iconify-icon> New</span>
+          <div class="card-img-wrap"><img src="https://picsum.photos/seed/kaos-graphic/400/400.jpg" alt="Kaos Graphic"><div class="img-overlay"></div><button class="wishlist-btn"><iconify-icon icon="solar:heart-bold"></iconify-icon></button><div class="quick-view-tag"><iconify-icon icon="solar:eye-bold-duotone"></iconify-icon> Quick View</div></div>
+          <div class="card-info"><h3>Kaos Graphic Limited</h3><div class="card-rating"><iconify-icon icon="solar:star-bold" style="color:#f59e0b"></iconify-icon> 4.9 <span>(1.3K)</span></div><div class="card-price"><span class="price-current">Rp 129.000</span><span class="price-original">Rp 199.000</span></div><div class="card-tag"><iconify-icon icon="solar:fire-bold-duotone"></iconify-icon> 35% OFF</div><div class="card-shipping"><iconify-icon icon="solar:delivery-bold-duotone"></iconify-icon> Gratis Ongkir</div></div>
+        </a>
+      </div>
+      <div class="load-more-wrap"><button class="load-more-btn" id="loadMoreBtn">Lihat Semua Produk <iconify-icon icon="solar:arrow-right-bold"></iconify-icon></button></div>
+    </section>
+
+    <!-- ========== FLASH SALE ========== -->
+    <section class="flash-sale-section" id="flash">
+      <div class="flash-header"><div><h2 class="flash-title"><iconify-icon icon="solar:bolt-bold-duotone"></iconify-icon> Flash Sale</h2><span class="flash-subtitle">Berakhir dalam</span></div><div class="flash-timer"><span class="timer-block" id="timerH">05</span><span class="timer-sep">:</span><span class="timer-block" id="timerM">23</span><span class="timer-sep">:</span><span class="timer-block" id="timerS">47</span></div></div>
+      <div class="flash-grid">
+        <a href="produk.html" class="flash-card"><img src="https://picsum.photos/seed/flash1/300/300.jpg" alt="Sale"><div class="flash-info"><h4>Kaos Oversize</h4><div class="flash-prices"><span class="flash-price">Rp 69K</span><span class="flash-old">Rp 149K</span></div><div class="flash-progress"><div class="flash-bar" style="width:78%"></div></div><small>78% terjual</small></div></a>
+        <a href="produk.html" class="flash-card"><img src="https://picsum.photos/seed/flash2/300/300.jpg" alt="Sale"><div class="flash-info"><h4>Hoodie Fleece</h4><div class="flash-prices"><span class="flash-price">Rp 89K</span><span class="flash-old">Rp 200K</span></div><div class="flash-progress"><div class="flash-bar" style="width:92%"></div></div><small>92% terjual</small></div></a>
+        <a href="produk.html" class="flash-card"><img src="https://picsum.photos/seed/flash3/300/300.jpg" alt="Sale"><div class="flash-info"><h4>Tas Ransel Pro</h4><div class="flash-prices"><span class="flash-price">Rp 39K</span><span class="flash-old">Rp 95K</span></div><div class="flash-progress"><div class="flash-bar" style="width:65%"></div></div><small>65% terjual</small></div></a>
+        <a href="produk.html" class="flash-card"><img src="https://picsum.photos/seed/flash4/300/300.jpg" alt="Sale"><div class="flash-info"><h4>Bucket Hat</h4><div class="flash-prices"><span class="flash-price">Rp 25K</span><span class="flash-old">Rp 65K</span></div><div class="flash-progress"><div class="flash-bar" style="width:85%"></div></div><small>85% terjual</small></div></a>
+      </div>
+    </section>
+
+    <!-- ========== PROMO CODE ========== -->
+    <section class="promocode-section">
+      <div class="promocode-content">
+        <div class="promocode-text"><span class="promocode-icon"><iconify-icon icon="solar:ticket-bold-duotone"></iconify-icon></span><div><h3>Punya Kode Promo?</h3><p>Masukkan kode dan dapatkan diskon tambahan hingga 50%</p></div></div>
+        <form class="promocode-form" id="promocodeForm"><input type="text" placeholder="Masukkan kode promo..." class="promocode-input" required><button type="submit" class="promocode-btn">Pakai</button></form>
+      </div>
+    </section>
+
+    <!-- ========== TESTIMONI ========== -->
+    <section class="testi-section" id="testimoni">
+      <div class="section-header"><span class="section-tag"><iconify-icon icon="solar:chat-round-dots-bold-duotone"></iconify-icon> Testimoni</span><h2 class="section-title">Kata Mereka Tentang Kami</h2><p class="section-desc">Ribuan pelanggan puas belanja di Markeplase</p></div>
+      <div class="testi-track" id="testiTrack">
+        <div class="testi-card"><div class="testi-stars"><iconify-icon icon="solar:star-bold" style="color:#f59e0b"></iconify-icon><iconify-icon icon="solar:star-bold" style="color:#f59e0b"></iconify-icon><iconify-icon icon="solar:star-bold" style="color:#f59e0b"></iconify-icon><iconify-icon icon="solar:star-bold" style="color:#f59e0b"></iconify-icon><iconify-icon icon="solar:star-bold" style="color:#f59e0b"></iconify-icon></div><p class="testi-text">"Kualitas kaosnya juara! Bahan tebal, jahitan rapi, dan pengiriman cepat banget. Pasti repeat order!"</p><div class="testi-author"><img src="https://picsum.photos/seed/avatar1/80/80.jpg" alt="Avatar"><div><strong>Rina Wulandari</strong><span>Pembeli Kaos Oversize</span></div></div></div>
+        <div class="testi-card"><div class="testi-stars"><iconify-icon icon="solar:star-bold" style="color:#f59e0b"></iconify-icon><iconify-icon icon="solar:star-bold" style="color:#f59e0b"></iconify-icon><iconify-icon icon="solar:star-bold" style="color:#f59e0b"></iconify-icon><iconify-icon icon="solar:star-bold" style="color:#f59e0b"></iconify-icon><iconify-icon icon="solar:star-bold" style="color:#f59e0b"></iconify-icon></div><p class="testi-text">"Hoodienya adem banget, fleece-nya tebal. Harga juga jauh lebih murah dari brand lain. Recommended!"</p><div class="testi-author"><img src="https://picsum.photos/seed/avatar2/80/80.jpg" alt="Avatar"><div><strong>Budi Santoso</strong><span>Pembeli Hoodie Premium</span></div></div></div>
+        <div class="testi-card"><div class="testi-stars"><iconify-icon icon="solar:star-bold" style="color:#f59e0b"></iconify-icon><iconify-icon icon="solar:star-bold" style="color:#f59e0b"></iconify-icon><iconify-icon icon="solar:star-bold" style="color:#f59e0b"></iconify-icon><iconify-icon icon="solar:star-bold" style="color:#f59e0b"></iconify-icon><iconify-icon icon="solar:star-bold" style="color:#f59e0b"></iconify-icon></div><p class="testi-text">"Tas ranselnya waterproof beneran! Kemarin kena hujan, isi di dalam tetap kering. Top markotop!"</p><div class="testi-author"><img src="https://picsum.photos/seed/avatar3/80/80.jpg" alt="Avatar"><div><strong>Dian Permata</strong><span>Pembeli Tas Ransel</span></div></div></div>
+        <div class="testi-card"><div class="testi-stars"><iconify-icon icon="solar:star-bold" style="color:#f59e0b"></iconify-icon><iconify-icon icon="solar:star-bold" style="color:#f59e0b"></iconify-icon><iconify-icon icon="solar:star-bold" style="color:#f59e0b"></iconify-icon><iconify-icon icon="solar:star-bold" style="color:#f59e0b"></iconify-icon><iconify-icon icon="solar:star-bold" style="color:#f59e0b"></iconify-icon></div><p class="testi-text">"Customer service-nya super responsif. Barang salah kirim, langsung diganti tanpa biaya. Mantap!"</p><div class="testi-author"><img src="https://picsum.photos/seed/avatar4/80/80.jpg" alt="Avatar"><div><strong>Ahmad Rizky</strong><span>Pembeli Bucket Hat</span></div></div></div>
+      </div>
+      <div class="testi-controls"><button class="testi-btn" id="testiPrev"><iconify-icon icon="solar:arrow-left-bold"></iconify-icon></button><div class="testi-dots" id="testiDots"></div><button class="testi-btn" id="testiNext"><iconify-icon icon="solar:arrow-right-bold"></iconify-icon></button></div>
+    </section>
+
+    <!-- ========== UGC ========== -->
+    <section class="ugc-section">
+      <div class="section-header"><span class="section-tag"><iconify-icon icon="solar:camera-bold-duotone"></iconify-icon> #MarkeplaseStyle</span><h2 class="section-title">Style Pelanggan Kami</h2><p class="section-desc">Tag @markeplase di Instagram</p></div>
+      <div class="ugc-grid">
+        <a href="#" class="ugc-card"><img src="https://picsum.photos/seed/ugc1/300/300.jpg" alt="Style"><div class="ugc-overlay"><span>@rinaldii</span></div></a>
+        <a href="#" class="ugc-card"><img src="https://picsum.photos/seed/ugc2/300/300.jpg" alt="Style"><div class="ugc-overlay"><span>@budi.stylish</span></div></a>
+        <a href="#" class="ugc-card"><img src="https://picsum.photos/seed/ugc3/300/300.jpg" alt="Style"><div class="ugc-overlay"><span>@dian.ootd</span></div></a>
+        <a href="#" class="ugc-card"><img src="https://picsum.photos/seed/ugc4/300/300.jpg" alt="Style"><div class="ugc-overlay"><span>@sari.fashion</span></div></a>
+        <a href="#" class="ugc-card"><img src="https://picsum.photos/seed/ugc5/300/300.jpg" alt="Style"><div class="ugc-overlay"><span>@ahmad.wear</span></div></a>
+        <a href="#" class="ugc-card"><img src="https://picsum.photos/seed/ugc6/300/300.jpg" alt="Style"><div class="ugc-overlay"><span>@mel.look</span></div></a>
+      </div>
+    </section>
+
+    <!-- ========== STATS ========== -->
+    <section class="stats-section">
+      <div class="stats-grid">
+        <div class="stat-card"><div class="stat-number" data-target="50000">0</div><div class="stat-label"><iconify-icon icon="solar:users-group-rounded-bold-duotone"></iconify-icon> Pelanggan Aktif</div></div>
+        <div class="stat-card"><div class="stat-number" data-target="10000">0</div><div class="stat-label"><iconify-icon icon="solar:box-bold-duotone"></iconify-icon> Produk Tersedia</div></div>
+        <div class="stat-card"><div class="stat-number" data-target="250000">0</div><div class="stat-label"><iconify-icon icon="solar:bag-check-bold-duotone"></iconify-icon> Pesanan Selesai</div></div>
+        <div class="stat-card"><div class="stat-number" data-target="99">0</div><div class="stat-label"><iconify-icon icon="solar:heart-bold-duotone"></iconify-icon> % Kepuasan</div></div>
+      </div>
+    </section>
+
+    <!-- ========== FAQ ========== -->
+    <section class="faq-section" id="faq">
+      <div class="section-header"><span class="section-tag"><iconify-icon icon="solar:question-circle-bold-duotone"></iconify-icon> FAQ</span><h2 class="section-title">Pertanyaan Umum</h2><p class="section-desc">Jawaban untuk pertanyaan yang sering diajukan</p></div>
+      <div class="faq-list">
+        <div class="faq-item"><button class="faq-q"><iconify-icon icon="solar:question-circle-bold-duotone"></iconify-icon> Bagaimana cara memesan produk? <span class="faq-arrow"><iconify-icon icon="solar:alt-arrow-right-bold"></iconify-icon></span></button><div class="faq-a"><p>Cukup pilih produk, klik "Beli", pilih metode pembayaran, dan selesaikan transaksi. Barang akan langsung dikirim ke alamatmu.</p></div></div>
+        <div class="faq-item"><button class="faq-q"><iconify-icon icon="solar:question-circle-bold-duotone"></iconify-icon> Apakah bisa bayar COD? <span class="faq-arrow"><iconify-icon icon="solar:alt-arrow-right-bold"></iconify-icon></span></button><div class="faq-a"><p>Ya! Kami menyediakan COD (Cash on Delivery) untuk area tertentu. Pilih metode COD saat checkout.</p></div></div>
+        <div class="faq-item"><button class="faq-q"><iconify-icon icon="solar:question-circle-bold-duotone"></iconify-icon> Berapa lama pengiriman? <span class="faq-arrow"><iconify-icon icon="solar:alt-arrow-right-bold"></iconify-icon></span></button><div class="faq-a"><p>Pengiriman biasanya 1-3 hari kerja untuk Jabodetabek dan 3-7 hari kerja untuk luar kota.</p></div></div>
+        <div class="faq-item"><button class="faq-q"><iconify-icon icon="solar:question-circle-bold-duotone"></iconify-icon> Bagaimana cara mengembalikan barang? <span class="faq-arrow"><iconify-icon icon="solar:alt-arrow-right-bold"></iconify-icon></span></button><div class="faq-a"><p>Kamu bisa mengembalikan barang dalam 30 hari jika tidak sesuai. Hubungi CS kami untuk proses retur.</p></div></div>
+        <div class="faq-item"><button class="faq-q"><iconify-icon icon="solar:question-circle-bold-duotone"></iconify-icon> Apakah produk dijamin orisinil? <span class="faq-arrow"><iconify-icon icon="solar:alt-arrow-right-bold"></iconify-icon></span></button><div class="faq-a"><p>100% orisinil! Jika terbukti palsu, uang dikembalikan 2x lipat.</p></div></div>
+        <div class="faq-item"><button class="faq-q"><iconify-icon icon="solar:question-circle-bold-duotone"></iconify-icon> Bisa request ukuran custom? <span class="faq-arrow"><iconify-icon icon="solar:alt-arrow-right-bold"></iconify-icon></span></button><div class="faq-a"><p>Beberapa produk mendukung custom size. Hubungi CS untuk informasi lebih lanjut.</p></div></div>
+      </div>
+    </section>
+
+    <!-- ========== APP DOWNLOAD ========== -->
+    <section class="app-section">
+      <div class="app-content">
+        <div class="app-text">
+          <span class="section-tag"><iconify-icon icon="solar:smartphone-bold-duotone"></iconify-icon> Download App</span>
+          <h2 class="section-title">Belanja Lebih Mudah di Aplikasi</h2>
+          <p class="app-desc">Download aplikasi Markeplase dan nikmati promo eksklusif hanya di app. Diskon 20% untuk pembelian pertama via aplikasi!</p>
+          <div class="app-badges">
+            <a href="#" class="app-badge"><span class="app-badge-icon"><iconify-icon icon="simple-icons:apple"></iconify-icon></span><div><small>Download on the</small><strong>App Store</strong></div></a>
+            <a href="#" class="app-badge"><span class="app-badge-icon"><iconify-icon icon="simple-icons:googleplay"></iconify-icon></span><div><small>Get it on</small><strong>Google Play</strong></div></a>
+          </div>
+        </div>
+        <div class="app-phone"><div class="phone-frame"><div class="phone-notch"></div><img src="https://picsum.photos/seed/app-screen/300/550.jpg" alt="App"></div></div>
+      </div>
+    </section>
+
+    <!-- ========== NEWSLETTER ========== -->
+    <section class="newsletter-section" id="kontak">
+      <div class="newsletter-content">
+        <span class="section-tag"><iconify-icon icon="solar:letter-bold-duotone"></iconify-icon> Newsletter</span>
+        <h2 class="section-title">Jangan Ketinggalan Promo!</h2>
+        <p class="section-desc">Daftar sekarang dan dapatkan diskon 15% untuk pembelian pertamamu.</p>
+        <form class="newsletter-form" id="newsletterForm"><input type="email" placeholder="Masukkan email kamu..." class="newsletter-input" required><button type="submit" class="newsletter-btn">Daftar Sekarang</button></form>
+        <small class="newsletter-note"><iconify-icon icon="solar:lock-keyhole-bold-duotone"></iconify-icon> Data kamu aman. Tidak ada spam.</small>
+      </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div class="footer-brand"><div class="footer-logo"><iconify-icon icon="solar:bag-heart-bold-duotone"></iconify-icon> Markeplase</div><p class="footer-desc">Marketplace fashion terpercaya dengan produk berkualitas dan harga terjangkau.</p><div class="footer-social"><a href="#"><iconify-icon icon="simple-icons:instagram"></iconify-icon></a><a href="#"><iconify-icon icon="simple-icons:tiktok"></iconify-icon></a><a href="#"><iconify-icon icon="simple-icons:x"></iconify-icon></a><a href="#"><iconify-icon icon="simple-icons:youtube"></iconify-icon></a></div></div>
+        <div class="footer-col"><div class="footer-heading">Belanja</div><div class="footer-links"><a href="#">Kaos</a><a href="#">Hoodie</a><a href="#">Tas</a><a href="#">Sepatu</a><a href="#">Aksesoris</a></div></div>
+        <div class="footer-col"><div class="footer-heading">Informasi</div><div class="footer-links"><a href="#">Tentang Kami</a><a href="#">Cara Belanja</a><a href="#">Pengiriman</a><a href="#">Pengembalian</a><a href="#">FAQ</a></div></div>
+        <div class="footer-col"><div class="footer-heading">Kontak</div><div class="footer-links"><a href="#"><iconify-icon icon="solar:phone-bold-duotone"></iconify-icon> +62 812-3456-7890</a><a href="#"><iconify-icon icon="solar:letter-bold-duotone"></iconify-icon> hello@markeplase.id</a><a href="#"><iconify-icon icon="solar:chat-round-dots-bold-duotone"></iconify-icon> Chat WhatsApp</a><a href="#"><iconify-icon icon="solar:map-point-bold-duotone"></iconify-icon> Jakarta, Indonesia</a></div></div>
+      </div>
+      <div class="footer-payment">
+        <span class="payment-label">Metode Pembayaran:</span>
+        <div class="payment-icons">
+          <span class="pay-icon"><iconify-icon icon="simple-icons:visa"></iconify-icon> Visa</span>
+          <span class="pay-icon"><iconify-icon icon="simple-icons:mastercard"></iconify-icon> Mastercard</span>
+          <span class="pay-icon pay-gopay"><iconify-icon icon="simple-icons:gopay"></iconify-icon> GoPay</span>
+          <span class="pay-icon pay-ovo"><iconify-icon icon="simple-icons:ovo"></iconify-icon> OVO</span>
+          <span class="pay-icon pay-dana"><iconify-icon icon="simple-icons:dana"></iconify-icon> DANA</span>
+          <span class="pay-icon pay-shopeepay"><iconify-icon icon="simple-icons:shopeepay"></iconify-icon> ShopeePay</span>
+          <span class="pay-icon pay-qris"><iconify-icon icon="solar:qr-code-bold-duotone"></iconify-icon> QRIS</span>
+          <span class="pay-icon pay-bca"><iconify-icon icon="simple-icons:bankbca"></iconify-icon> BCA</span>
+          <span class="pay-icon pay-bri"><iconify-icon icon="simple-icons:bankbri"></iconify-icon> BRI</span>
+          <span class="pay-icon pay-mandiri"><iconify-icon icon="simple-icons:bankmandiri"></iconify-icon> Mandiri</span>
+        </div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2025 Markeplase. All rights reserved.</p><div class="footer-bottom-links"><a href="#">Kebijakan Privasi</a><a href="#">Syarat & Ketentuan</a></div></div>
+    </footer>
+
+    <!-- ========== MOBILE BOTTOM NAV ========== -->
+    <nav class="mobile-bottom-nav" id="mobileNav">
+      <a href="#" class="mob-nav-item active"><iconify-icon icon="solar:home-smile-bold-duotone"></iconify-icon><small>Home</small></a>
+      <a href="#kategori" class="mob-nav-item"><iconify-icon icon="solar:tag-bold-duotone"></iconify-icon><small>Kategori</small></a>
+      <a href="#" class="mob-nav-item mob-cart-btn" id="mobCartBtn"><iconify-icon icon="solar:cart-large-2-bold-duotone"></iconify-icon><span class="mob-cart-badge" id="mobCartBadge">2</span><small>Keranjang</small></a>
+      <a href="#kontak" class="mob-nav-item"><iconify-icon icon="solar:chat-round-dots-bold-duotone"></iconify-icon><small>Chat</small></a>
+      <a href="#" class="mob-nav-item"><iconify-icon icon="solar:user-bold-duotone"></iconify-icon><small>Akun</small></a>
+    </nav>
+
+    <!-- ========== QUICK VIEW MODAL ========== -->
+    <div class="modal-overlay" id="quickViewModal">
+      <div class="quick-view-modal">
+        <button class="modal-close" id="modalClose"><iconify-icon icon="solar:close-circle-bold-duotone"></iconify-icon></button>
+        <div class="qv-left"><img id="qvImg" src="" alt="Product"></div>
+        <div class="qv-right">
+          <span class="qv-badge"><iconify-icon icon="solar:star-bold"></iconify-icon> Best Seller</span>
+          <h2 id="qvName">Product Name</h2>
+          <div class="qv-rating" id="qvRating"><iconify-icon icon="solar:star-bold" style="color:#f59e0b"></iconify-icon> 4.9 (2.4K terjual)</div>
+          <div class="qv-price" id="qvPrice">Rp 99.000</div>
+          <div class="qv-colors"><span class="qv-label">Warna:</span><button class="qv-color-dot active" style="background:#1a1a2e"></button><button class="qv-color-dot" style="background:#e8e8e8"></button><button class="qv-color-dot" style="background:#4a6fa5"></button></div>
+          <div class="qv-size"><span class="qv-label">Ukuran:</span><button class="size-btn">S</button><button class="size-btn active">M</button><button class="size-btn">L</button><button class="size-btn">XL</button></div>
+          <div class="qv-ship"><iconify-icon icon="solar:delivery-bold-duotone"></iconify-icon> Gratis Ongkir <iconify-icon icon="solar:clock-circle-bold-duotone" style="margin-left:8px"></iconify-icon> Estimasi 1-2 hari</div>
+          <div class="qv-btns"><button class="qv-cart" id="qvAddCart"><iconify-icon icon="solar:cart-large-2-bold-duotone"></iconify-icon> Tambah ke Keranjang</button><a href="produk.html" class="qv-buy"><iconify-icon icon="solar:bag-check-bold-duotone"></iconify-icon> Beli Sekarang</a></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== SOCIAL PROOF ========== -->
+    <div class="social-proof" id="socialProof">
+      <img src="" alt="Buyer" class="sp-img">
+      <div class="sp-text"><strong id="spName">Budi</strong><span id="spAction">baru beli Kaos Oversize</span><small>2 menit lalu · Jakarta</small></div>
+      <button class="sp-close" id="spClose"><iconify-icon icon="solar:close-circle-bold-duotone"></iconify-icon></button>
+    </div>
+
+    <!-- ========== LIVE CHAT ========== -->
+    <div class="livechat-widget" id="livechatWidget">
+      <button class="livechat-toggle" id="livechatToggle"><span class="lc-icon"><iconify-icon icon="solar:chat-round-dots-bold-duotone"></iconify-icon></span><span class="lc-label">Live Chat</span><span class="lc-badge">1</span></button>
+      <div class="livechat-box" id="livechatBox">
+        <div class="lc-header"><div class="lc-header-info"><span class="lc-avatar"><iconify-icon icon="solar:headphones-round-bold-duotone"></iconify-icon></span><div><strong>CS Markeplase</strong><span class="lc-online"><iconify-icon icon="solar:point-on-map-bold" style="font-size:8px;color:#4ade80"></iconify-icon> Online</span></div></div><button class="lc-close" id="lcClose"><iconify-icon icon="solar:close-circle-bold-duotone"></iconify-icon></button></div>
+        <div class="lc-messages" id="lcMessages">
+          <div class="lc-msg bot"><iconify-icon icon="solar:hand-shake-bold-duotone"></iconify-icon> Halo! Ada yang bisa kami bantu? Silakan tanya tentang produk, pesanan, atau promo!</div>
+        </div>
+        <form class="lc-input-wrap" id="lcForm"><input type="text" class="lc-input" id="lcInput" placeholder="Ketik pesan..."><button type="submit" class="lc-send"><iconify-icon icon="solar:plain-bold-duotone"></iconify-icon></button></form>
+      </div>
+    </div>
+
+    <!-- ========== WHATSAPP ========== -->
+    <a href="https://wa.me/6281234567890?text=Halo%20Markeplase!" target="_blank" class="wa-float" title="Chat WhatsApp"><span class="wa-icon"><iconify-icon icon="simple-icons:whatsapp"></iconify-icon></span><span class="wa-text">Chat Kami</span></a>
+
+    <!-- ========== COOKIE BAR ========== -->
+    <div class="cookie-bar" id="cookieBar">
+      <p><iconify-icon icon="solar:cookie-bold-duotone"></iconify-icon> Kami menggunakan cookies untuk pengalaman belanja terbaik. <a href="#">Pelajari lebih</a></p>
+      <div class="cookie-btns"><button class="cookie-btn accept" id="cookieAccept">Terima</button><button class="cookie-btn decline" id="cookieDecline">Tolak</button></div>
+    </div>
+
+    <button class="scroll-top-btn" id="scrollTopBtn"><iconify-icon icon="solar:arrow-up-bold"></iconify-icon></button>
+    <div class="toast" id="toast"></div>
+
+    <script>
+      // ===== PRELOADER =====
+      window.addEventListener('load',()=>{setTimeout(()=>{document.getElementById('preloader').classList.add('hidden')},1500)});
+
+      // ===== SCROLL PROGRESS =====
+      window.addEventListener('scroll',()=>{const h=document.documentElement;const p=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100;document.getElementById('scrollProgress').style.width=p+'%'});
+
+      // ===== TOP BAR =====
+      document.getElementById('topbarClose').addEventListener('click',()=>{document.getElementById('topbar').style.display='none'});
+
+      // ===== SEARCH SUGGEST =====
+      const si=document.getElementById('searchInput'),ss=document.getElementById('searchSuggest');
+      si.addEventListener('focus',()=>ss.classList.add('show'));
+      si.addEventListener('blur',()=>setTimeout(()=>ss.classList.remove('show'),200));
+
+      // ===== HAMBURGER =====
+      const hb=document.getElementById('hamburger'),mn=document.getElementById('menu');
+      hb.addEventListener('click',()=>{hb.classList.toggle('active');mn.classList.toggle('open')});
+      mn.querySelectorAll('a').forEach(l=>{l.addEventListener('click',()=>{hb.classList.remove('active');mn.classList.remove('open')})});
+
+      // ===== NAVBAR SCROLL =====
+      window.addEventListener('scroll',()=>document.querySelector('.navbar').classList.toggle('scrolled',window.scrollY>20));
+
+      // ===== NOTIF DROPDOWN =====
+      const nBtn=document.getElementById('notifBtn'),nDrop=document.getElementById('notifDropdown');
+      nBtn.addEventListener('click',(e)=>{e.stopPropagation();nDrop.classList.toggle('show');document.getElementById('profileDropdown').classList.remove('show')});
+      document.querySelector('.notif-read').addEventListener('click',()=>{document.querySelectorAll('.notif-item.unread').forEach(i=>i.classList.remove('unread'));document.querySelector('.nav-badge').style.display='none';nDrop.classList.remove('show')});
+
+      // ===== PROFILE DROPDOWN =====
+      const pBtn=document.getElementById('profileBtn'),pDrop=document.getElementById('profileDropdown');
+      pBtn.addEventListener('click',(e)=>{e.stopPropagation();pDrop.classList.toggle('show');nDrop.classList.remove('show')});
+      document.addEventListener('click',()=>{nDrop.classList.remove('show');pDrop.classList.remove('show')});
+
+      // ===== CART DRAWER =====
+      const cBtn=document.getElementById('cartBtn'),cDr=document.getElementById('cartDrawer'),cOv=document.getElementById('cartOverlay'),cCl=document.getElementById('cartClose');
+      function openCart(){cDr.classList.add('open');cOv.classList.add('show');document.body.style.overflow='hidden'}
+      function closeCart(){cDr.classList.remove('open');cOv.classList.remove('show');document.body.style.overflow=''}
+      cBtn.addEventListener('click',openCart);cCl.addEventListener('click',closeCart);cOv.addEventListener('click',closeCart);
+      document.getElementById('mobCartBtn')?.addEventListener('click',(e)=>{e.preventDefault();openCart()});
+      document.querySelectorAll('.qty-btn').forEach(b=>{b.addEventListener('click',function(){const s=this.parentElement.querySelector('span');let v=parseInt(s.textContent);if(this.textContent.trim()==='+'&&v<10)v++;else if(this.textContent.trim()==='−'&&v>1)v--;s.textContent=v})});
+      document.querySelectorAll('.cart-item-remove').forEach(b=>{b.addEventListener('click',function(){this.parentElement.style.animation='slideOut .3s ease forwards';setTimeout(()=>this.parentElement.remove(),300)})});
+
+      // ===== HERO SLIDER =====
+      const slides=document.querySelectorAll('.hero-slide'),dots=document.querySelectorAll('.hero-dot');
+      let curSlide=0;
+      function goSlide(n){slides.forEach(s=>s.classList.remove('active'));dots.forEach(d=>d.classList.remove('active'));curSlide=n;slides[n].classList.add('active');dots[n].classList.add('active')}
+      dots.forEach(d=>{d.addEventListener('click',()=>goSlide(parseInt(d.dataset.slide)))});
+      setInterval(()=>goSlide((curSlide+1)%slides.length),6000);
+
+      // ===== SCROLL TOP =====
+      const sBtn=document.getElementById('scrollTopBtn');
+      window.addEventListener('scroll',()=>sBtn.classList.toggle('visible',window.scrollY>500));
+      sBtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+      // ===== PRODUCT FILTER =====
+      document.querySelectorAll('.filter-btn').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');const f=btn.dataset.filter;document.querySelectorAll('.produk-card').forEach(c=>{if(f==='all'||c.dataset.cat===f){c.style.display='';c.style.animation='ci .5s ease both'}else{c.style.display='none'}})})});
+
+      // ===== WISHLIST =====
+      document.querySelectorAll('.wishlist-btn').forEach(btn=>{btn.addEventListener('click',(e)=>{e.preventDefault();e.stopPropagation();btn.classList.toggle('liked');const icon=btn.querySelector('iconify-icon');icon.setAttribute('icon',btn.classList.contains('liked')?'solar:heart-bold':'solar:heart-bold');if(btn.classList.contains('liked')){btn.style.color='#ef4444';showToast('Ditambahkan ke Wishlist')}else{btn.style.color='';showToast('Dihapus dari Wishlist')}})});
+
+      // ===== COLOR DOTS =====
+      document.querySelectorAll('.card-colors').forEach(w=>{w.querySelectorAll('.color-dot').forEach(d=>{d.addEventListener('click',(e)=>{e.preventDefault();e.stopPropagation();w.querySelectorAll('.color-dot').forEach(x=>x.classList.remove('active'));d.classList.add('active')})})});
+
+      // ===== QUICK VIEW =====
+      const modal=document.getElementById('quickViewModal');
+      function openQuickView(e,card){e.preventDefault();document.getElementById('qvImg').src=card.dataset.img;document.getElementById('qvName').textContent=card.dataset.name;document.getElementById('qvPrice').textContent=card.dataset.price;document.getElementById('qvRating').innerHTML='<iconify-icon icon="solar:star-bold" style="color:#f59e0b"></iconify-icon> '+card.dataset.rating+' ('+card.dataset.sold+' terjual)';modal.classList.add('show');document.body.style.overflow='hidden'}
+      document.getElementById('modalClose').addEventListener('click',()=>{modal.classList.remove('show');document.body.style.overflow=''});
+      modal.addEventListener('click',(e)=>{if(e.target===modal){modal.classList.remove('show');document.body.style.overflow=''}});
+      document.querySelectorAll('.size-btn').forEach(b=>{b.addEventListener('click',()=>{document.querySelectorAll('.size-btn').forEach(x=>x.classList.remove('active'));b.classList.add('active')})});
+      document.querySelectorAll('.qv-color-dot').forEach(b=>{b.addEventListener('click',()=>{document.querySelectorAll('.qv-color-dot').forEach(x=>x.classList.remove('active'));b.classList.add('active')})});
+      document.getElementById('qvAddCart').addEventListener('click',()=>{let c=parseInt(document.getElementById('cartCount').textContent);c++;document.getElementById('cartCount').textContent=c;document.getElementById('mobCartBadge').textContent=c;showToast('Ditambahkan ke keranjang!');modal.classList.remove('show');document.body.style.overflow=''});
+
+      // ===== TESTI =====
+      const track=document.getElementById('testiTrack'),cards=track.querySelectorAll('.testi-card'),dotsW=document.getElementById('testiDots');let cur=0;
+      cards.forEach((_,i)=>{const d=document.createElement('div');d.className='testi-dot'+(i===0?' active':'');d.addEventListener('click',()=>goTo(i));dotsW.appendChild(d)});
+      function goTo(n){cur=n;track.style.transform=`translateX(-${n*100}%)`;dotsW.querySelectorAll('.testi-dot').forEach((d,i)=>d.classList.toggle('active',i===n))}
+      document.getElementById('testiPrev').addEventListener('click',()=>goTo((cur-1+cards.length)%cards.length));
+      document.getElementById('testiNext').addEventListener('click',()=>goTo((cur+1)%cards.length));
+      setInterval(()=>goTo((cur+1)%cards.length),5000);
+
+      // ===== COUNTER =====
+      let counted=false;const cObs=new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting&&!counted){counted=true;document.querySelectorAll('.stat-number').forEach(el=>{const t=parseInt(el.dataset.target),s=Date.now();const tick=()=>{const p=Math.min((Date.now()-s)/2000,1),ea=1-Math.pow(1-p,3);el.textContent=Math.floor(t*ea).toLocaleString('id-ID');if(p<1)requestAnimationFrame(tick);else el.textContent=t.toLocaleString('id-ID')+(t===99?'%':'+')}})}})},{threshold:.3});cObs.observe(document.querySelector('.stats-section'));
+
+      // ===== FLASH TIMER =====
+      let ts=5*3600+23*60+47;function uT(){const h=Math.floor(ts/3600),m=Math.floor((ts%3600)/60),s=ts%60;document.getElementById('timerH').textContent=String(h).padStart(2,'0');document.getElementById('timerM').textContent=String(m).padStart(2,'0');document.getElementById('timerS').textContent=String(s).padStart(2,'0');if(ts>0)ts--}setInterval(uT,1000);
+
+      // ===== FAQ =====
+      document.querySelectorAll('.faq-q').forEach(q=>{q.addEventListener('click',()=>{const item=q.parentElement,a=item.classList.contains('active');document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('active'));if(!a)item.classList.add('active')})});
+
+      // ===== PROMOCODE =====
+      document.getElementById('promocodeForm').addEventListener('submit',(e)=>{e.preventDefault();showToast('Kode promo berhasil! Diskon 20%');e.target.reset()});
+
+      // ===== NEWSLETTER =====
+      document.getElementById('newsletterForm').addEventListener('submit',(e)=>{e.preventDefault();showToast('Berhasil! Cek email untuk diskon 15%');e.target.reset()});
+
+      // ===== LOAD MORE =====
+      document.getElementById('loadMoreBtn').addEventListener('click',()=>showToast('Semua produk sudah ditampilkan!'));
+
+      // ===== COOKIE =====
+      const cb=document.getElementById('cookieBar');if(!localStorage.getItem('cookieOk'))setTimeout(()=>cb.classList.add('show'),2500);
+      document.getElementById('cookieAccept').addEventListener('click',()=>{localStorage.setItem('cookieOk','1');cb.classList.remove('show');showToast('Cookies diterima')});
+      document.getElementById('cookieDecline').addEventListener('click',()=>cb.classList.remove('show'));
+
+      // ===== SOCIAL PROOF =====
+      const spN=['Rina','Budi','Dian','Ahmad','Sari','Riko','Mela','Doni'],spP=['Kaos Oversize','Hoodie Premium','Tas Ransel','Bucket Hat','Kalung Chain','Kaos Graphic'],spC=['Jakarta','Bandung','Surabaya','Semarang','Medan','Yogyakarta'];
+      const spEl=document.getElementById('socialProof');let spCt=0;
+      function showSP(){if(spCt>=5)return;spCt++;document.getElementById('spName').textContent=spN[Math.floor(Math.random()*spN.length)];document.getElementById('spAction').textContent='baru beli '+spP[Math.floor(Math.random()*spP.length)];spEl.querySelector('img').src='https://picsum.photos/seed/sp'+spCt+'/60/60.jpg';spEl.querySelector('small').textContent=Math.floor(Math.random()*10)+1+' menit lalu · '+spC[Math.floor(Math.random()*spC.length)];spEl.classList.add('show');setTimeout(()=>spEl.classList.remove('show'),5000)}
+      setTimeout(showSP,8000);setInterval(()=>{if(spCt<5)showSP()},15000);
+      document.getElementById('spClose').addEventListener('click',()=>{spEl.classList.remove('show');spCt=5});
+
+      // ===== LIVE CHAT =====
+      const lcT=document.getElementById('livechatToggle'),lcB=document.getElementById('livechatBox'),lcC=document.getElementById('lcClose'),lcF=document.getElementById('lcForm'),lcI=document.getElementById('lcInput'),lcM=document.getElementById('lcMessages');
+      lcT.addEventListener('click',()=>{lcB.classList.toggle('open');lcT.querySelector('.lc-badge').style.display='none'});
+      lcC.addEventListener('click',()=>lcB.classList.remove('open'));
+      lcF.addEventListener('submit',(e)=>{e.preventDefault();const msg=lcI.value.trim();if(!msg)return;lcM.innerHTML+=`<div class="lc-msg user">${msg}</div>`;lcI.value='';lcM.scrollTop=lcM.scrollHeight;setTimeout(()=>{const replies=['Terima kasih! CS kami sedang mengecek...','Baik, kami bantu segera!','Silakan tunggu sebentar ya...','Produk tersebut tersedia! Mau order sekarang?','Promo HEMAT20 aktif! Gunakan saat checkout'];lcM.innerHTML+=`<div class="lc-msg bot">${replies[Math.floor(Math.random()*replies.length)]}</div>`;lcM.scrollTop=lcM.scrollHeight},1000)});
+
+      // ===== MOBILE BOTTOM NAV =====
+      document.querySelectorAll('.mob-nav-item').forEach(i=>{i.addEventListener('click',function(){document.querySelectorAll('.mob-nav-item').forEach(x=>x.classList.remove('active'));this.classList.add('active')})});
+
+      // ===== TOAST =====
+      function showToast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3000)}
+
+      // ===== SCROLL REVEAL =====
+      const rEls=document.querySelectorAll('.category-card,.feature-item,.stat-card,.flash-card,.howto-step,.collection-card,.ugc-card,.faq-item');
+      const rObs=new IntersectionObserver((entries)=>{entries.forEach((en,i)=>{if(en.isIntersecting){setTimeout(()=>en.target.classList.add('revealed'),i*50);rObs.unobserve(en.target)}})},{threshold:.1,rootMargin:'0px 0px -30px 0px'});
+      rEls.forEach(el=>rObs.observe(el));
+    </script>
+  </body>
+</html>
